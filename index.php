@@ -1,3 +1,5 @@
 <?php
-echo 1+9;
+$dirscan=scandir("Repo");
+$dirscan=array_diff($dirscan,[".",".."]);
+print_r($dirscan);
 ?>
