@@ -4,6 +4,10 @@ a,a:link,a:visited{text-decoration: none;color:inherit}
     left:20px;
     color:black;
 }
+.box:hover
+{
+    display: block;
+}
 .element
 {
     color:darkgray;
