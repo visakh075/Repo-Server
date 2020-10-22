@@ -1,4 +1,4 @@
-a,a:link,a:visited{text-decoration: none;}
+a,a:link,a:visited{text-decoration: none;color:inherit}
 .box{
     position: relative;
     left:20px;
@@ -18,5 +18,5 @@ a,a:link,a:visited{text-decoration: none;}
 }
 .element:hover
 {
-    font-weight: bolder;
+    color:orangered;
 }
