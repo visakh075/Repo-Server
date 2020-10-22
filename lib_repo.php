@@ -18,7 +18,11 @@ class dir_obj{
             {
                 $this->list[$i]->show();
             }
-            else{echo("<div class='element'>".$this->list[$i]."</div>");}
+            else{
+                $link=$this->path."/".$this->list[$i];
+                $cwd=getcwd();
+                str_replace($cwd,"0",$link);
+                echo("<div class='element'><a href='$link'>".$this->list[$i]."</a></div>");}
         }
         print_r("</div>");
     }

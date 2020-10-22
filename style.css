@@ -13,5 +13,9 @@
     display: none;
 }
 .box:hover > .box,.box:hover > .element{
-    display: block;
+    display: inherit;
+}
+.element:hover
+{
+    font-weight: bolder;
 }
