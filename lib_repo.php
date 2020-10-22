@@ -7,7 +7,7 @@ class dir_obj{
     
     public function show()
     {
-        print_r("<br><ul>");
+        print_r("<ul>");
         print_r($this->base."<br>");
         print_r($this->path."<br>");
         
