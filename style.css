@@ -1,4 +1,17 @@
-ul{
-    font-weight: bold;
-    color:red;
+.box{
+    position: relative;
+    left:20px;
+    color:black;
+}
+.element
+{
+    color:darkgray;
+}
+.element,.box > * {
+    position: relative;
+    left:20px;
+    display: none;
+}
+.box:hover > .box,.box:hover > .element{
+    display: block;
 }

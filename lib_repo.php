@@ -7,9 +7,10 @@ class dir_obj{
     
     public function show()
     {
-        print_r("<ul>");
-        print_r($this->base."<br>");
-        print_r($this->path."<br>");
+        $i=0;
+        print_r("<div class='box'>");
+        print_r($this->base);
+        //print_r($this->path."<br>");
         
         for($i=0;$i<sizeof($this->list);$i++)
         {
@@ -17,9 +18,9 @@ class dir_obj{
             {
                 $this->list[$i]->show();
             }
-            else{echo("..".$this->list[$i]."<br>");}
+            else{echo("<div class='element'>".$this->list[$i]."</div>");}
         }
-        print_r("</ul>");
+        print_r("</div>");
     }
 } 
 $map=new dir_obj();
