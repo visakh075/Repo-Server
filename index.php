@@ -1,10 +1,17 @@
-<?php
-include "lib_repo.php";
-$dirscan=scandir("Repo");
-$dirscan=array_values(array_diff($dirscan,[".",".."]));
-print_r($dirscan);
-$path=getcwd();
-//echo $path;
+<html>
 
-dir_list($path."\Repo");
-?>
+<head>
+<link rel="stylesheet" href="sytle.css">
+</head>
+
+<body>
+
+    <?php
+    include "lib_repo.php";
+    $path=getcwd();
+    $map=dir_list("Repo",$path."/Repo");
+    $map->show();
+    ?>
+
+</body>
+</html>
