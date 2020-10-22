@@ -20,9 +20,9 @@ class dir_obj{
             }
             else{
                 $link=$this->path."/".$this->list[$i];
-                $cwd=getcwd();
-                str_replace($cwd,"0",$link);
-                echo("<div class='element'><a href='$link'>".$this->list[$i]."</a></div>");}
+                $rem=$_SERVER['HTTP_HOST'].$_SERVER['DOCUMENT_ROOT'];
+                $url=str_replace($rem,"/",$link);
+                echo("<div class='element'><a href='$url'>".$this->list[$i]."</a></div>");}
         }
         print_r("</div>");
     }
