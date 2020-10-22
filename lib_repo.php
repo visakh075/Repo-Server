@@ -11,7 +11,7 @@ class dir_obj{
         print_r("<div class='box'>");
         print_r($this->base);
         //print_r($this->path."<br>");
-        
+        $rem=getcwd();
         for($i=0;$i<sizeof($this->list);$i++)
         {
             if($this->list[$i] instanceof dir_obj)
@@ -20,8 +20,7 @@ class dir_obj{
             }
             else{
                 $link=$this->path."/".$this->list[$i];
-                $rem=$_SERVER['HTTP_HOST'].$_SERVER['DOCUMENT_ROOT'];
-                $url=str_replace($rem,"/",$link);
+                $url=str_replace($rem,"",$link);
                 echo("<div class='element'><a href='$url'>".$this->list[$i]."</a></div>");}
         }
         print_r("</div>");
