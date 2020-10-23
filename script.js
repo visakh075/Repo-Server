@@ -22,25 +22,25 @@ function refresh(location)
             if(obj[i].parent==location) // Item to show
             {
                 filename=`<div class='filename'>${obj[i].base}</div>`;
-                thumb="<div class='thumb'>"+obj[i].id+"</div>";
                 format="<div class='format'>"+obj[i].type+"</div>";
                 details="<div class='details'>"+filename+format+"</div>";
-
-                //var item=   "<div class='item'>";
-                    item=  thumb;
-                    item+=  details;
-                //    item+=  "</div>";
 
             // a href init            
             if(obj[i].type!="folder"){content+="<a href='"+obj[i].path+"'>";}
             if(obj[i].type=="folder")
             {
+                thum_src="icons/folder.svg";
                 content+="<div class='item' onClick='refresh("+obj[i].id+")'>";
             }
             else
             {
+                thum_src="icons/file.svg";
                 content+="<div class='item'>";
             }
+            thumb="<div class='thumb'><img src='"+thum_src+"'></div>";
+            //var item=   "<div class='item'>";
+            item=  thumb;
+            item+=  details;
             content+=item;
             // a href init
             content+="</div>";
