@@ -29,15 +29,15 @@ function refresh(location)
             if(obj[i].type!="folder"){content+="<a href='"+obj[i].path+"'>";}
             if(obj[i].type=="folder")
             {
-                thum_src="icons/folder.svg";
+                thum_src="icons/folder.png";
                 content+="<div class='item' onClick='refresh("+obj[i].id+")'>";
             }
             else
             {
-                thum_src="icons/file.svg";
+                thum_src="icons/file.png";
                 content+="<div class='item'>";
             }
-            thumb="<div class='thumb'><img src='"+thum_src+"'></div>";
+            thumb="<div class='thumb'><img src='" +thum_src+"'/></div>";
             //var item=   "<div class='item'>";
             item=  thumb;
             item+=  details;
