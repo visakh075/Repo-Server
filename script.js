@@ -14,10 +14,14 @@ function refresh(location)
         var content="";
         for(i=0;i<obj_count;i++)
         {
-            if(obj[i].parent==location)
+            if(obj[i].parent==location && obj[i].type=="folder")
             {
-                console.log(obj[i].base +  " of "+obj[i].parent);
+                //console.log(obj[i].base +  " of "+obj[i].parent);
                 content+="<div class='item' onclick='refresh("+obj[i].id+")'>"+obj[i].base+"</div>";
+            }
+            else if(obj[i].parent==location)
+            {
+                content+="<div class='item' onclick=''><a href='"+obj[i].path+"'>"+obj[i].base+"</a></div>";  
             }
         }
         document.getElementById('container').innerHTML=content;
