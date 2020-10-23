@@ -1,56 +1,57 @@
 <?php
+$map=array();
+$id_count=0;
 class dir_obj{
 
     public $base="";
     public $path="";
-    public $list=array();
-    
-    public function show()
-    {
-        $i=0;
-        print_r("<div class='box'>");
-        print_r($this->base);
-        //print_r($this->path."<br>");
-        $rem=getcwd();
-        for($i=0;$i<sizeof($this->list);$i++)
-        {
-            if($this->list[$i] instanceof dir_obj)
-            {
-                $this->list[$i]->show();
-            }
-            else{
-                $link=$this->path."/".$this->list[$i];
-                $url=str_replace($rem,"",$link);
-                echo("<div class='element'><a href='$url'>".$this->list[$i]."</a></div>");}
-        }
-        print_r("</div>");
+    public $id;
+    public $type="";
+    public $parent;
     }
-} 
-$map=new dir_obj();
-function dir_list(string $base,string $dir)
-{
-    global $map;
-    $arr=scandir($dir);
+function dir_list(string $base,string $dire,int $parent){
+    // Use $base as name
+    // Use $dire as directory or path
+    // assign $id
+    // pass as parent for a child
+    global $id_count,$map;
+    
+    // Scan Directory
+    $arr=scandir($dire);
     $arr=array_values(array_diff($arr,[".",".."]));
-    //print_r($arr);
+
     for($i=0;$i<sizeof($arr);$i++)
     {
-        $ele=$arr[$i];
-        $path=$dir."/".$ele;
-        //array_push($map,$path);
+        $obj=new dir_obj();
+        $obj->id=$id_count;$id_count++;   // assign id
+        $obj->parent=$parent;
+
+        $element = $arr[$i]; // item in search list
+        $path=$dire."/".$element;   // new item
+        $obj->base=$element;
         if(is_dir($path))
         {
-            $arr[$i]=dir_list($ele,$path);
+            // if new item is a dir recurse and add in $map
+            $obj->type="folder";
+            dir_list($element,$path,$obj->id);
         }
+        elseif(is_file($path))
+        {
+            // if new item is file just add
+            $obj->type="file";
+        }
+        $short_path=str_replace([getcwd()],[""],$path);
+        $obj->path=$short_path;
+        array_push($map,$obj); 
     }
-    $obj=new dir_obj();
-    $obj->base=$base;
-    $obj->path=$dir;
-    $obj->list=$arr;
-    //echo "<br>";
-    //print_r($arr);
-    //$map=$obj;
-    //print_r($obj);
-    return($obj);
-}
+    }
+function scan(){
+    global $map;
+    $map=array();
+    $path=getcwd();
+    dir_list("root",$path."/Repo",-1);
+
+    $json_map=json_encode($map);
+    return($json_map);
+    }
 ?>

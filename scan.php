@@ -1,8 +1,20 @@
 <?php
     include "lib_repo.php";
-    $path=getcwd();
-    $map=dir_list("Repo",$path."/Repo");
-    //$map->show();
-    $json=json_encode($map);
-    echo($json);
+    header('content-type: application/json');
+    echo (scan());
+    /*
+    for($i=0;$i<sizeof($map);$i++)
+    {
+        if($map[$i] instanceof dir_obj)
+        {
+            echo
+             '<br>Name:'. $map[$i]->base.
+             '<br>Id :'. $map[$i]->id.
+             '<br>Parent :'. $map[$i]->parent.
+             '<br>Type :'. $map[$i]->type.
+             '<br><hr>';
+
+        }
+    }*/
+    
 ?>

@@ -1,26 +1,14 @@
 a,a:link,a:visited{text-decoration: none;color:inherit}
-.box{
-    position: relative;
-    left:20px;
-    color:black;
-}
-.box:hover
+.container
 {
-    display: block;
+    border:solid 1px orangered;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
 }
-.element
+.item
 {
-    color:darkgray;
-}
-.element,.box > * {
-    position: relative;
-    left:20px;
-    display: none;
-}
-.box:hover > .box,.box:hover > .element{
-    display: inherit;
-}
-.element:hover
-{
-    color:orangered;
+    width:200px;
+    height:50px;
+    border:solid 1px green;
 }
