@@ -38,7 +38,7 @@ function dir_list(string $base,string $dire,int $parent){
         elseif(is_file($path))
         {
             // if new item is file just add
-            $obj->type=pathinfo($path,PATHINFO_EXTENSION);
+            $obj->type="file";
         }
         $short_path=str_replace([getcwd()],[""],$path);
         $obj->path=$short_path;

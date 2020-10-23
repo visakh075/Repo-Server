@@ -7,29 +7,48 @@ function refresh(location)
     var req= new XMLHttpRequest();
     req.onreadystatechange = function(){
         var obj=JSON.parse(this.responseText);
-        console.clear();
-        //console.log(this.responseText);
-        console.log(obj);
-
-        var obj_count=obj.length;
-        console.log("length of return :"+ obj_count);
-        {
+        
         var content="";
+        //var filename="";
+        //var thumb="";
+        //var details="";
+        //var item;
+        var obj_count=obj.length;
         for(i=0;i<obj_count;i++)
         {
+            // set c_parent
             if(obj[i].id==c_location){c_parent=obj[i].parent}
-            if(obj[i].parent==location && obj[i].type=="folder")
+
+            if(obj[i].parent==location) // Item to show
             {
-                //console.log(obj[i].base +  " of "+obj[i].parent);
-                content+="<div class='item' onclick='refresh("+obj[i].id+")'>"+obj[i].base+"</div>";
+                filename=`<div class='filename'>${obj[i].base}</div>`;
+                thumb="<div class='thumb'>"+obj[i].id+"</div>";
+                format="<div class='format'>"+obj[i].parent+"</div>";
+                details="<div class='details'>"+filename+format+"</div>";
+
+                //var item=   "<div class='item'>";
+                    item=  thumb;
+                    item+=  details;
+                //    item+=  "</div>";
+
+            // a href init            
+            if(obj[i].type!="folder"){content+="<a href='"+obj[i].path+"'>";}
+            if(obj[i].type=="folder")
+            {
+                content+="<div class='item' onClick='refresh("+obj[i].id+")'>";
             }
-            else if(obj[i].parent==location)
+            else
             {
-                content+="<div class='item' onclick=''><a href='"+obj[i].path+"'>"+obj[i].base+"</a></div>";  
+                content+="<div class='item'>";
+            }
+            content+=item;
+            // a href init
+            content+="</div>";
+            if(obj[i].type!="folder"){content+="</a>";}            
             }
         }
         document.getElementById('container').innerHTML=content;
-        }
+        
         console.log("current parent :"+c_parent);
         console.log("current location :"+location);
     }
