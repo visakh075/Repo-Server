@@ -16,9 +16,14 @@ a,a:link,a:visited{text-decoration: none;color:inherit}
     position: static;
     width:200px;
     height:50px;
-    border:solid 1px green;
+    border:solid 1px transparent;
+    border-radius: 5px;
+    margin:5px;
 }
-
+.item:hover{
+    opacity:0.5;
+    border:solid 1px orangered;
+}
 .item > *
 {
     font-size: 75%;
@@ -49,6 +54,7 @@ a,a:link,a:visited{text-decoration: none;color:inherit}
     /*
     top:0;
     left:0;*/
+    text-align: center;
     height:100%;
     width: 25%;    
 }

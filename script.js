@@ -23,7 +23,7 @@ function refresh(location)
             {
                 filename=`<div class='filename'>${obj[i].base}</div>`;
                 thumb="<div class='thumb'>"+obj[i].id+"</div>";
-                format="<div class='format'>"+obj[i].parent+"</div>";
+                format="<div class='format'>"+obj[i].type+"</div>";
                 details="<div class='details'>"+filename+format+"</div>";
 
                 //var item=   "<div class='item'>";
