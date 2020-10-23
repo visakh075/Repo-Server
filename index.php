@@ -7,8 +7,14 @@
 </head>
 
 <body>
-<input type="submit" onclick="refresh(-1)"/>
-<div class="container" id="container">
+
+<div class="header">
+    <input type="submit" value="refresh" onclick="refresh(c_location)"/>
+    <input type="submit" value="up" onclick="refresh(c_parent)"/>
 </div>
+
+<div class="container" id="container"></div>
+
+
 </body>
 </html>
