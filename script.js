@@ -29,12 +29,12 @@ function refresh(location)
             if(obj[i].type!="folder"){content+="<a href='"+obj[i].path+"'>";}
             if(obj[i].type=="folder")
             {
-                thum_src="icons/folder.png";
+                thum_src="folder.svg";
                 content+="<div class='item' onClick='refresh("+obj[i].id+")'>";
             }
             else
             {
-                thum_src="icons/file.png";
+                thum_src="file.svg";
                 content+="<div class='item'>";
             }
             thumb="<div class='thumb'><img src='" +thum_src+"'/></div>";

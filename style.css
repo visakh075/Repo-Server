@@ -1,7 +1,10 @@
+html,body{background-color:#2f2f2f;}
 a,a:link,a:visited{text-decoration: none;color:inherit}
 .container
 {
-    border:solid 1px orangered;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    border:solid 1px transparent;
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
@@ -19,10 +22,12 @@ a,a:link,a:visited{text-decoration: none;color:inherit}
     border:solid 1px transparent;
     border-radius: 0;
     margin:5px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    color:white;
 }
-.item:hover{
+.item:hover > .thumb{
     opacity:0.5;
-    border:solid 1px orangered;
 }
 .item > *
 {
@@ -58,7 +63,7 @@ a,a:link,a:visited{text-decoration: none;color:inherit}
     height:100%;
     width: 25%;    
 }
-.thumb>svg
+.thumb>img
 {
     height:100%;
     width:100%;
