@@ -22,6 +22,7 @@ function dir_list(string $base,string $dire,int $parent){
 
     for($i=0;$i<sizeof($arr);$i++)
     {
+        if($arr[$i][0]=='.'){continue;}
         $obj=new dir_obj();
         $obj->id=$id_count;$id_count++;   // assign id
         $obj->parent=$parent;
