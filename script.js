@@ -81,10 +81,10 @@ function get_base(id){
 function get_head(id)
 {
     //if(id==-1){return("<div>Repo</div>");}
-    head="<div>";
+    head="<div onclick='navigate("+id+");'>";
     head+=get_base(id);
-    head+=" ></div>";
-    if(id==-1){return("<div>Repo > </div>");}
+    head+="</div>";
+    if(id==-1){return("<div onclick='navigate(-1);'>Repo</div>");}
     head+=get_head(get_parent(id));
     return(head);
 }
