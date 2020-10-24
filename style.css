@@ -1,7 +1,30 @@
-html,body{background-color:#2f2f2f;}
+html,body{background-color:#2f2f2f;color:white;}
 a,a:link,a:visited{text-decoration: none;color:inherit}
+.full_wrap
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.side_panel
+{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width:20%;
+    font-size: 80%;
+}
+.side_panel>.entry
+{
+    width: 100%;
+}
+.in_dir{color:green;}
+.ext_dir{color:orangered;}
+.c_dir{color:violet;}
 .container
 {
+    box-sizing: border-box;
+    width:80%;
     padding-bottom: 5px;
     padding-right: 5px;
     border:solid 1px transparent;
@@ -51,6 +74,7 @@ a,a:link,a:visited{text-decoration: none;color:inherit}
 }
 .details > .format
 {
+    color:darkgray;
     height:66%;
     width:100%
 }
