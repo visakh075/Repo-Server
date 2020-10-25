@@ -7,15 +7,14 @@
 </head>
 
 <body onload="get_data();">
-
+<div class="body_wrap">
 <div class="header">  
-    <input type="submit" value="refresh" onclick="navigate(c_location)"/>
-    <input type="submit" value="up" onclick="navigate(c_parent)"/>
-    <div id="head">head</div>
+    <input class="header_input" type="submit" value="Up" onclick="navigate(c_parent);"/>
+    <div id="head" class="head"></div>
 </div>
 <div class="full_wrap">
-
-<div class="container" id="container"></div>
+<div class="container_wrap"><div class="container" id="container"></div></div>
+</div>
 </div>
 </body>
 </html>
