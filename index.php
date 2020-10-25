@@ -1,6 +1,7 @@
 <html>
 
 <head>
+<meta name="viewport" content="width=device-width ,initial-scale=1">
 <link rel="stylesheet" href="style.css"/>
 <script src="script.js" language="JavaScript"></script>
 <?php include "lib_repo.php";scan();?>
