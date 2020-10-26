@@ -82,7 +82,6 @@ function get_base(id){
     {return(d_data[i].base);}
     return(null);
     }
-    
 function get_head(id)
 {
     if(id==-1){return("<div class='header_div' onclick='navigate(-1);'>Repo</div>");}
