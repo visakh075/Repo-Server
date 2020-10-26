@@ -1,3 +1,8 @@
+function get_dimension(){
+    var TH=$(".body_wrap").height();
+    var HH=$(".header").height();
+    var CH=TH-HH;
+    $(".container_wrap").css("height",CH);};
 var c_location=-1;
 var c_parent=-1;
 var c_path="";
@@ -98,11 +103,13 @@ function navigate(id=-1){
     {
         content+=get_item(child[i]);
     }
+
     console.clear();
     console.log("c_loc : "+c_location);
     console.log("c_par : "+c_parent);
     console.log("gpath : "+get_path(id));
     console.log("gtype : "+get_type(id));
-    
     document.getElementById('container').innerHTML=content;
-    document.getElementById('head').innerHTML=get_head(id);}
+    document.getElementById('head').innerHTML=get_head(id);
+    get_dimension();
+}
